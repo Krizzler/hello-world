@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+    body::before {
+        content: '';
+        top: 0;
+        left: 0;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        background-image: url("castle.jpg");
+        background-color: rgba(42, 71, 71, 0.548);
+        background-blend-mode: lighten;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .container {
+        width: 100%;
+        margin: 3rem auto 0 auto;
+        color:white;
+        
+    }
+    @media (min-width: 576px){
+       .container{ max-width: 540px;}
+    }
+    @media (min-width: 768px) {
+        .container{max-width: 720px;}
+    }
+    h1 {
+        font-family: 'Cinzel Decorative', sans-serif;
+        font-size: 3em;
+        
+    }
+    #description {
+        max-width: fit-content;
+        background-color: rgba(30, 19, 92, 0.486);
+        margin:auto;
+        border-radius: 0.25rem;
+        color: white;
+    }
+    label {
+        display: flex;
+        
+        font-size: 1.75em;
+        line-height: 1.75rem;
+        
+        
+    }
+    input, button, select, textarea {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        
+        
+       
+    }
+    form {
+        background-color: rgba(2, 21, 39, 0.548);
+        padding: 1.5rem 1rem;
+        border-style: solid;
+        border-radius: 0.5rem;
+        border-color: black;
+        
+    }
+    .form-question {
+        line-height:1em;
+        margin: auto auto 1.5em auto;
+    }
+    .textinput {
+        display: block;
+        width: 100%;
+        height: 2rem;
+    }
+    .optional {
+        margin-left: 0.25rem;
+        font-size: 1.3rem;
+        font-style: italic;
+    }
+    #qblock {
+        margin-bottom: 4rem;
+    }
+    .radioinput {
+        margin-right: 0.5rem;
+    }
+    .radiolabel {
+        font-size: 1.5rem;
+        margin: 1rem auto;}
+    input[type="radio"], input[type="checkbox"] {
+        margin-top: 7px;
+    }  
+.text-box {
+    width: 100%;
+    margin: auto;
+    margin-top: 1.5rem;
+    min-height: 100px;
+    resize:vertical;
+}
+.subbutton {
+    display:block;
+    width: 100%;
+    margin-top:2rem;
+    height: 4rem;
+    color:inherit;
+    background-color: blueviolet;
+    border-radius: 0.5rem;
+    border-style: solid;
+}
+
+    
+
+</style>
+</head>
+ <body><header id="header">
+            <h1 id="title">Roleplaying Video Game Survey</h1>
+            <p id="description">Thank you for participating in this survey about roleplaying video games (hereinafter referred to as RPGs)</p>
+         </header>
+     <div class="container">
+         
+<form id="survey-form">
+    <div class="form-question">
+        <label id="name-label" for="name">Name</label><br>
+        <input class="textinput" type="text" id="name" name="name" placeholder="Enter your name" required>
+    </div>
+    <div class="form-question">
+<label id="email-label" for="email">Email</label><br>
+<input class="textinput" type="email" id="email" name="email" placeholder="Enter your Email" required>
+    </div>
+    <div class="form-question">
+        <label id="number-label" for="number">Age <span class="optional">(optional)</span></label><br>
+        <input 
+        class="textinput"
+        type="number"
+        name="number"
+        id="number"
+        min="5"
+        max="99"
+        placeholder="Age">
+    </div>
+    <div class="form-question" id="qblock">
+        <label for="dropdown">How many hours per week do you play RPGs?</label><br>
+<select id="dropdown" name="dropdown" class="textinput" required>
+    <option disabled selected value>Please select an option</option>
+    <option value="1-10h">Between 1 and 10 hours</option>
+    <option value="10-30h">Between 10 and 30 hours</option>
+    <option value="30-50h">Between 30 and 50 hours</option>
+    <option value="50+h">More than 50 hours</option>
+</select>
+    </div>
+
+    <div class="form-question" id="qblock">
+        <label for="rpg-type">What is your favourite type of RPG?</label><br>
+        <label class="radiolabel">
+            <input
+            name="rpg-type"
+            value="crpg"
+            type="radio"
+            class="radioinput">
+            CRPG (Neverwinter Nights, Baldur's Gate)
+        </label>
+        <label class="radiolabel">
+            <input
+            name="rpg-type"
+            value="arpg"
+            type="radio"
+            class="radioinput">
+            ARPG (Dark Souls, Dragon's Dogma)
+        </label>
+        <label class="radiolabel">
+            <input
+            name="rpg-type"
+            value="srpg"
+            type="radio"
+            class="radioinput">
+            SRPG (The Banner Saga, Valkyria Chronicles)
+        </label>
+        <label class="radiolabel">
+            <input
+            name="rpg-type"
+            value="mmorpg"
+            type="radio"
+            class="radioinput">
+            MMORPG (World of Warcraft, Guild Wars)
+        </label>
+        <label class="radiolabel">
+            <input
+            name="rpg-type"
+            value="jrpg"
+            type="radio"
+            class="radioinput">
+            JRPG (Star Ocean Series, Tales of Series)
+        </label>
+        <label class="radiolabel">
+            <input
+            name="rpg-type"
+            value="other"
+            type="radio"
+           class="radioinput">
+           Other
+        </label>
+    </div>
+    
+    <div class="form-question" id="qblock">
+        <label for="features" style="margin-bottom:2rem">Which features are most important to you in an RPG?</label>
+        <label class="radiolabel">
+            <input 
+            name="features"
+            value="charcustom"
+            type="checkbox"
+            class="radioinput">
+            Character Customization (e.g. Appearance, Backstory)
+        </label>
+        <label class="radiolabel">
+            <input
+            name="features"
+            value="openworld"
+            type="checkbox"
+            class="radioinput">
+            Open World
+        </label>
+        <label class="radiolabel">
+            <input
+            name="features"
+            value="story"
+            type="checkbox"
+            class="radioinput">
+            Well Written Story / Lore
+        </label>
+        <label class="radiolabel">
+            <input
+            name="features"
+            value="charprog"
+            type="checkbox"
+            class="radioinput">
+            Character Progression (e.g. Skill Trees, Unlockable Abilities)    
+        </label>
+        <label class="radiolabel">
+            <input
+            name="features"
+            value="loot"
+            type="checkbox"
+            class="radioinput">
+            Wide Variety of Loot / Equipment
+        </label>
+        <label class="radiolabel">
+            <input
+            name="features"
+            value="multiplayer"
+            type="checkbox"
+            class="radioinput">
+            Multiplayer
+        </label>
+        <label class="radiolabel">
+            <input
+            name="features"
+            value="playerdecisions"
+            type="checkbox"
+            class="radioinput">
+            Non-linear Story (Impacted by Player's Decisions)
+        </label>
+        <label class="radiolabel">
+            <input
+            name="features"
+            value="fantasy"
+            type="checkbox"
+            class="radioinput">
+            Fantasy Aspects (e.g. Magic, Dragons, Elves)
+        </label>
+        <label class="radiolabel">
+            <input
+            name="features"
+            value="combat"
+            type="checkbox"
+            class="radioinput">
+            Combat System
+        </label>
+        <label class="radiolabel">
+            <input
+            name="features"
+            value="difficulty"
+            type="checkbox"
+            class="radioinput">
+            High Difficulty
+        </label>
+        <label class="radiolabel">
+            <input
+            name="features"
+            value="playstyles"
+            type="checkbox"
+            class="radioinput">
+            Different Playstyles / Classes (e.g. Warrior, Thief, Spellcaster)
+        </label>
+        <label class="radiolabel">
+            <input
+            name="features"
+            value="crafting"
+            type="checkbox"
+            class="radioinput">
+            Crafting System
+        </label>
+       
+    
+</div>
+<div class="formquestion">
+    <label for="textbox">If there are any other features that are important to you, please write them down in the box below:</label> 
+    <textarea
+    id="textbox"
+    name="textbox"
+    placeholder="Please enter any other features that are important to you..."
+    class="text-box"
+    ></textarea>
+</div>
+<div class="formquestion">
+    <button type="submit" id="submit" class="subbutton">
+        Submit
+        </button>
+</div>
+</form>
+     </div>
+ </body>
+ <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</html>
